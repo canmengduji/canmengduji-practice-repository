@@ -1,0 +1,601 @@
+cd|文件管理|cd [目录路径]|切换当前工作目录|cd /sdcard
+ls|文件管理|ls [选项] [路径]|列出目录内容|ls -la /sdcard
+cp|文件管理|cp [选项] <源> <目标>|复制文件或目录|cp -r dir1 dir2
+mv|文件管理|mv [选项] <源> <目标>|移动或重命名文件|mv old.txt new.txt
+rm|文件管理|rm [选项] <文件>|删除文件或目录|rm -rf unwanted_dir/
+mkdir|文件管理|mkdir [选项] <目录名>|创建目录|mkdir -p a/b/c
+rmdir|文件管理|rmdir [选项] <目录名>|删除空目录|rmdir empty_dir
+touch|文件管理|touch [选项] <文件>|创建空文件或更新时间戳|touch newfile.txt
+cat|文件管理|cat [选项] <文件>|查看文件全部内容|cat /etc/hosts
+less|文件管理|less [选项] <文件>|分页查看（支持上下翻页）|less largefile.log
+more|文件管理|more [选项] <文件>|分页查看（只能向下）|more long_text.txt
+head|文件管理|head [选项] <文件>|查看文件开头N行|head -n 20 file.txt
+tail|文件管理|tail [选项] <文件>|查看文件末尾或实时追踪|tail -f log.txt
+find|文件管理|find <路径> [选项]|搜索文件|find /sdcard -name "*.mp3"
+locate|文件管理|locate <关键词>|快速定位文件|locate passwd
+chmod|文件管理|chmod [选项] <权限> <文件>|修改文件权限|chmod 755 script.sh
+chown|文件管理|chown [选项] <用户>[:组] <文件>|修改文件所有者|chown user:group file.txt
+ln|文件管理|ln [选项] <源> <链接名>|创建链接（硬/软）|ln -s /sdcard/download link
+stat|文件管理|stat [选项] <文件>|显示文件详细状态|stat file.txt
+du|文件管理|du [选项] [路径]|统计磁盘使用量|du -sh /sdcard
+df|文件管理|df [选项] [挂载点]|显示磁盘剩余空间|df -h
+mount|文件管理|mount [选项] <设备> <挂载点>|挂载文件系统|mount -o loop image.iso /mnt
+umount|文件管理|umount [选项] <挂载点>|卸载文件系统|umount /mnt
+sync|文件管理|sync|将缓存写入磁盘|sync
+rsync|文件管理|rsync [选项] <源> <目标>|高效同步文件|rsync -avz dir/ user@host:/path/
+scp|文件管理|scp [选项] <源> <目标>|通过SSH复制文件|scp file.txt user@host:~/
+rename|文件管理|rename [选项] <表达式> <文件>|批量重命名|rename 's/\.JPG$/.jpg/' *.JPG
+tree|文件管理|tree [选项] [路径]|树形显示目录结构|tree -L 2 /sdcard
+file|文件管理|file [选项] <文件>|检测文件实际类型|file /bin/ls
+basename|文件管理|basename <路径> [后缀]|提取文件名|basename /a/b/c.txt .txt
+dirname|文件管理|dirname <路径>|提取目录部分|dirname /a/b/c.txt
+realpath|文件管理|realpath [选项] <路径>|获取绝对路径|realpath ~/link
+mktemp|文件管理|mktemp [选项]|创建临时文件或目录|mktemp -d
+readlink|文件管理|readlink [选项] <链接>|显示链接指向的目标|readlink /usr/bin/python
+install|文件管理|install [选项] <源> <目标>|复制并设置属性|install -m 755 script /usr/local/bin/
+pax|文件管理|pax [选项] [模式]|可移植归档交换工具|pax -w -f archive.tar dir/
+mc|文件管理|mc [目录]|Midnight Commander 文件管理器|mc /sdcard
+ranger|文件管理|ranger [路径]|终端文件管理器（VI快捷键）|ranger /sdcard
+vifm|文件管理|vifm [路径]|VI风格的文件管理器|vifm .
+dircolors|文件管理|dircolors [选项]|设置ls颜色配置|dircolors -p > ~/.dircolors
+mkfifo|文件管理|mkfifo [选项] <名称>|创建命名管道（FIFO）|mkfifo mypipe
+mknod|文件管理|mknod [选项] <名称> <类型>|创建块设备或字符设备文件|mknod /dev/mydev c 100 0
+truncate|文件管理|truncate [选项] <文件>|截断或扩展文件到指定大小|truncate -s 1M file.img
+fallocate|文件管理|fallocate [选项] <文件>|预分配文件空间（快速）|fallocate -l 1G largefile
+swapon|文件管理|swapon [选项] <设备>|启用交换分区或文件|swapon /swapfile
+swapoff|文件管理|swapoff [选项] <设备>|禁用交换分区|swapoff /swapfile
+eject|文件管理|eject [选项] [设备]|弹出可移动介质|eject /dev/cdrom
+flock|文件管理|flock [选项] <文件>|管理文件锁|flock -x lockfile -c "critical_section"
+tmpwatch|文件管理|tmpwatch [选项] <小时> <目录>|删除一段时间未访问的临时文件|tmpwatch 24 /tmp
+chattr|文件管理|chattr [选项] <属性> <文件>|修改文件扩展属性（不可变等）|chattr +i important.txt
+lsattr|文件管理|lsattr [选项] <文件>|显示文件扩展属性|lsattr file.txt
+getfacl|文件管理|getfacl [选项] <文件>|获取文件ACL权限|getfacl file.txt
+setfacl|文件管理|setfacl [选项] <文件>|设置文件ACL权限|setfacl -m u:user:rwx file.txt
+umask|文件权限|umask [选项] <掩码>|设置新建文件默认权限掩码|umask 022
+grep|文本处理|grep [选项] <模式> [文件]|搜索文本（支持正则）|grep -rn "TODO" *.sh
+sed|文本处理|sed [选项] <脚本> [文件]|流式文本编辑器|sed -i 's/old/new/g' file.txt
+awk|文本处理|awk [选项] <程序> [文件]|强大的文本分析工具|awk '{print $1,$NF}' file.txt
+cut|文本处理|cut [选项] [文件]|按列截取文本|cut -d: -f1 /etc/passwd
+sort|文本处理|sort [选项] [文件]|文本排序|sort -k2 -n grades.txt
+uniq|文本处理|uniq [选项] [文件]|去除或统计重复行|sort file.txt | uniq -c
+wc|文本处理|wc [选项] [文件]|统计行数/单词数/字符数|wc -l file.txt
+tr|文本处理|tr [选项] <set1> [set2]|替换或删除字符|tr 'a-z' 'A-Z' < input.txt
+diff|文本处理|diff [选项] <文件1> <文件2>|比较两个文件差异|diff -u old.txt new.txt
+patch|文本处理|patch [选项] <原文件> <补丁>|应用补丁|patch < fix.patch
+echo|文本处理|echo [字符串]|输出文本|echo "Hello World"
+printf|文本处理|printf <格式> [参数]|格式化输出|printf "%03d\n" 5
+fmt|文本处理|fmt [选项] [文件]|格式化文本段落|fmt -w 80 file.txt
+fold|文本处理|fold [选项] [文件]|按宽度折叠长行|fold -w 72 file.txt
+join|文本处理|join [选项] <文件1> <文件2>|基于公共字段合并文件|join -t: a.txt b.txt
+paste|文本处理|paste [选项] [文件...]|按列合并多个文件|paste f1.txt f2.txt
+split|文本处理|split [选项] <文件> [前缀]|分割大文件|split -l 1000 bigfile chunk_
+tee|文本处理|tee [选项] <文件>|同时输出到终端和文件|echo "data" | tee log.txt
+expand|文本处理|expand [选项] [文件]|制表符转空格|expand -t 4 file.txt
+unexpand|文本处理|unexpand [选项] [文件]|空格转制表符|unexpand -t 4 file.txt
+rev|文本处理|rev [选项] [文件]|反转每行字符顺序|echo "hello" | rev
+strings|文本处理|strings [选项] <文件>|提取二进制中的可读字符串|strings /bin/ls | head
+iconv|文本处理|iconv [选项] <文件>|转换文件编码|iconv -f GBK -t UTF-8 file.txt
+xargs|文本处理|xargs [选项] <命令>|将输入转为命令参数|find . -name "*.txt" | xargs rm
+comm|文本处理|comm [选项] <文件1> <文件2>|比较两个已排序文件|comm -12 sorted1.txt sorted2.txt
+col|文本处理|col [选项]|过滤反向换行（处理man输出）|man ls | col -b > ls.txt
+pr|文本处理|pr [选项] [文件]|将文本格式化为页（含页眉）|pr -l 60 file.txt | lpr
+look|文本处理|look [选项] <前缀> [文件]|显示以指定前缀开头的行|look "ab" /usr/share/dict/words
+ptx|文本处理|ptx [选项] [文件]|生成文件的关键词索引|ptx file.txt
+spell|文本处理|spell [选项] [文件]|拼写检查（需安装）|spell document.txt
+ispell|文本处理|ispell [选项] [文件]|交互式拼写检查|ispell document.txt
+aspell|文本处理|aspell [选项] <命令>|拼写检查工具（增强版）|aspell check document.txt
+dos2unix|文本处理|dos2unix [选项] <文件>|DOS格式转Unix格式|dos2unix file.txt
+unix2dos|文本处理|unix2dos [选项] <文件>|Unix格式转DOS格式|unix2dos file.txt
+od|文本处理|od [选项] <文件>|以八进制或其他进制显示文件|od -A x -t x1z file.bin
+hexdump|文本处理|hexdump [选项] <文件>|十六进制查看文件|hexdump -C file.bin
+xxd|文本处理|xxd [选项] [文件]|十六进制转储/还原|xxd file.bin | head
+nl|文本处理|nl [选项] [文件]|给文件加行号|nl file.txt
+tsort|文本处理|tsort [选项] <文件>|拓扑排序（依赖关系排序）|tsort deps.txt
+rs|文本处理|rs [选项]|重塑数据矩阵（行列转置）|rs -c -C 3 file.txt
+shred|文件安全|shred [选项] <文件>|安全删除（覆写文件内容）|shred -u secret.txt
+wipe|文件安全|wipe [选项] <文件>|安全擦除文件（需安装）|wipe -rf secret_dir/
+srm|文件安全|srm [选项] <文件>|安全删除文件|srm -z secret.pdf
+gpg|文件安全|gpg [选项] <文件>|GNU隐私加密工具|gpg -c file.txt
+openssl|文件安全|openssl <子命令> [选项]|强大的加密工具包|openssl enc -aes-256-cbc -in file.txt -out file.enc
+base64|文件安全|base64 [选项] [文件]|Base64编码或解码|echo "hello" | base64
+md5sum|文件安全|md5sum [选项] <文件>|计算文件的MD5哈希|md5sum file.iso
+sha1sum|文件安全|sha1sum [选项] <文件>|计算文件的SHA1哈希|sha1sum file.iso
+sha256sum|文件安全|sha256sum [选项] <文件>|计算文件的SHA256哈希|sha256sum file.iso
+sha512sum|文件安全|sha512sum [选项] <文件>|计算文件的SHA512哈希|sha512sum file.iso
+cksum|文件安全|cksum [选项] <文件>|计算文件的CRC校验和|cksum file.txt
+sum|文件安全|sum [选项] <文件>|计算文件的BSD校验和|sum file.txt
+cfv|文件安全|cfv [选项] <模式>|校验文件完整性工具|cfv -C -f checksums.md5
+ping|网络相关|ping [选项] <目标>|测试网络连通性和延迟|ping -c 4 google.com
+curl|网络相关|curl [选项] <URL>|发送网络请求或下载文件|curl -O https://example.com/file.zip
+wget|网络相关|wget [选项] <URL>|下载文件（支持断点续传）|wget -c https://example.com/bigfile.iso
+ssh|网络相关|ssh [选项] <用户@主机>|SSH远程连接|ssh user@192.168.1.100
+ifconfig|网络相关|ifconfig [接口] [参数]|查看或配置网络接口|ifconfig wlan0
+ip|网络相关|ip [选项] <对象> <命令>|网络配置管理工具|ip addr show
+netstat|网络相关|netstat [选项]|显示网络连接和路由表|netstat -tuln
+nslookup|网络相关|nslookup <域名>|查询DNS解析记录|nslookup baidu.com
+dig|网络相关|dig [选项] <域名> [类型]|更强大的DNS查询|dig A baidu.com
+traceroute|网络相关|traceroute [选项] <目标>|追踪数据包路由路径|traceroute google.com
+nmap|网络相关|nmap [选项] <目标>|网络端口扫描|nmap -sS 192.168.1.1
+nc|网络相关|nc [选项] <主机> <端口>|网络调试工具（netcat）|nc -zv 127.0.0.1 22
+route|网络相关|route [选项]|查看或修改路由表|route -n
+ss|网络相关|ss [选项]|查看套接字统计（替代netstat）|ss -tuln
+host|网络相关|host [选项] <域名> [服务器]|简洁版DNS查询|host baidu.com
+telnet|网络相关|telnet <主机> <端口>|Telnet远程连接|telnet 192.168.1.1 23
+ftp|网络相关|ftp <主机>|FTP文件传输|ftp ftp.example.com
+hostnamectl|网络相关|hostnamectl [选项]|查看或设置主机名|hostnamectl set-hostname mydevice
+iptables|网络相关|iptables [选项]|防火墙规则管理|iptables -L -n
+ip6tables|网络相关|ip6tables [选项]|IPv6防火墙规则管理|ip6tables -L -n
+ufw|网络相关|ufw [选项]|简洁的防火墙管理工具|ufw enable
+firewalld|网络相关|firewall-cmd [选项]|firewalld防火墙管理|firewall-cmd --list-all
+arp|网络相关|arp [选项]|查看或修改ARP缓存|arp -a
+arping|网络相关|arping [选项] <IP>|用ARP协议ping主机|arping 192.168.1.1
+ethtool|网络相关|ethtool [选项] <接口>|查看或修改网卡参数|ethtool eth0
+iwconfig|网络相关|iwconfig [接口] [参数]|配置无线网络接口|iwconfig wlan0
+iwlist|网络相关|iwlist <接口> <操作>|扫描无线网络|iwlist wlan0 scan
+mtr|网络相关|mtr [选项] <目标>|追踪路由+ping（组合工具）|mtr google.com
+socat|网络相关|socat [选项] <地址1> <地址2>|多功能网络隧道工具|socat TCP-LISTEN:8080,fork TCP:server:80
+ncat|网络相关|ncat [选项] <主机> <端口>|增强版netcat（nmap套件）|ncat -lvp 4444
+whois|网络相关|whois <域名>|查询域名注册信息|whois example.com
+tcpdump|网络相关|tcpdump [选项] [表达式]|抓取网络数据包|tcpdump -i wlan0 port 80
+dhclient|网络相关|dhclient [选项] <接口>|DHCP客户端（获取IP）|dhclient wlan0
+nmcli|网络相关|nmcli [选项] <对象>|NetworkManager命令行工具|nmcli dev status
+nmtui|网络相关|nmtui|NetworkManager文本界面工具|nmtui
+iw|网络相关|iw [命令] [参数]|新的无线网络配置工具|iw dev wlan0 link
+wpa_supplicant|网络相关|wpa_supplicant [选项]|WiFi连接认证守护进程|wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf
+pppoe-setup|网络相关|pppoe-setup [选项]|PPPoE拨号配置工具|pppoe-setup
+pppoe-start|网络相关|pppoe-start|启动PPPoE拨号连接|pppoe-start
+pppoe-stop|网络相关|pppoe-stop|停止PPPoE拨号连接|pppoe-stop
+speedtest-cli|网络相关|speedtest-cli [选项]|测速工具（需安装）|speedtest-cli
+aria2c|网络相关|aria2c [选项] <URL>|多协议下载工具（支持BT）|aria2c -x 4 https://example.com/file.iso
+lftp|网络相关|lftp [选项] <主机>|强大的FTP/HTTP下载客户端|lftp ftp.example.com
+rsync|网络同步|rsync [选项] <源> <目标>|高效同步文件|rsync -avz dir/ user@host:/path/
+ps|进程管理|ps [选项]|显示当前进程快照|ps aux
+top|进程管理|top [选项]|实时显示进程状态和负载|top -u root
+htop|进程管理|htop [选项]|增强版top（彩色/鼠标）|htop
+kill|进程管理|kill [选项] <PID>|终止指定进程|kill -9 1234
+pkill|进程管理|pkill [选项] <名称>|按名称批量杀进程|pkill -f python
+killall|进程管理|killall [选项] <名称>|杀死所有同名进程|killall -9 java
+nice|进程管理|nice [选项] <命令>|以指定优先级运行程序|nice -n 5 ./script.sh
+renice|进程管理|renice <优先级> <PID>|调整运行中进程优先级|renice -5 1234
+nohup|进程管理|nohup <命令> [参数]|退出终端后继续运行|nohup python server.py &
+bg|进程管理|bg [作业号]|将暂停作业放到后台|bg %1
+fg|进程管理|fg [作业号]|将后台作业调到前台|fg %1
+jobs|进程管理|jobs [选项]|显示后台作业列表|jobs -l
+wait|进程管理|wait [PID]|等待后台进程结束|wait $!
+timeout|进程管理|timeout [选项] <秒数> <命令>|超时后自动终止|timeout 5 ping google.com
+pstree|进程管理|pstree [选项] [PID]|树形显示进程关系|pstree -p
+lsof|进程管理|lsof [选项]|列出系统打开的文件|lsof -i :8080
+watch|进程管理|watch [选项] <命令>|周期性执行并刷新|watch -n 1 'ps aux | head'
+cgroups|进程管理|cgcreate [选项] <组名>|创建控制组（资源限制）|cgcreate -g cpu,memory:/mygroup
+cgset|进程管理|cgset <组名> <参数>|设置控制组资源限制|cgset -r cpu.shares=512 mygroup
+cgexec|进程管理|cgexec [选项] <组名> <命令>|在控制组中执行命令|cgexec -g cpu,memory:/mygroup ./script.sh
+taskset|进程管理|taskset [选项] <掩码> <命令>|设置进程的CPU亲和性|taskset -c 0,1 ./program
+ionice|进程管理|ionice [选项] <命令>|设置进程的I/O优先级|ionice -c 3 ./backup.sh
+chrt|进程管理|chrt [选项] <优先级> <命令>|设置进程的实时调度策略|chrt -f 50 ./realtime_prog
+pmap|进程管理|pmap [选项] <PID>|查看进程的内存映射|pmap -x 1234
+slabtop|进程管理|slabtop [选项]|实时显示内核slab缓存信息|slabtop
+uname|系统信息|uname [选项]|显示系统内核信息|uname -a
+hostname|系统信息|hostname|显示或设置系统主机名|hostname
+uptime|系统信息|uptime|显示系统运行时间和负载|uptime
+dmesg|系统信息|dmesg [选项]|显示内核日志（硬件和驱动）|dmesg | grep error
+free|系统信息|free [选项]|显示内存使用情况|free -h
+lscpu|系统信息|lscpu [选项]|显示CPU架构信息|lscpu
+lspci|系统信息|lspci [选项]|列出PCI设备|lspci -vnn
+lsusb|系统信息|lsusb [选项]|列出USB设备|lsusb -v
+lsblk|系统信息|lsblk [选项]|列出块设备（磁盘和分区）|lsblk -f
+blkid|系统信息|blkid [选项] [设备]|显示UUID和文件系统类型|blkid /dev/block/mmcblk0
+env|系统信息|env [选项]|显示环境变量|env | grep PATH
+printenv|系统信息|printenv [变量名]|打印指定环境变量|printenv HOME
+whoami|系统信息|whoami|显示当前登录用户名|whoami
+id|系统信息|id [选项] [用户]|显示用户UID、GID和所属组|id
+who|系统信息|who [选项]|显示当前登录用户|who -a
+w|系统信息|w [选项] [用户]|显示登录用户及其执行的命令|w
+last|系统信息|last [选项] [用户]|显示最近登录记录|last -10
+date|系统信息|date [选项] [+格式]|显示或设置日期时间|date +%Y-%m-%d
+cal|系统信息|cal [选项] [月] [年]|显示日历|cal -y 2026
+arch|系统信息|arch|显示系统架构|arch
+nproc|系统信息|nproc [选项]|显示CPU核心数|nproc --all
+acpi|系统信息|acpi [选项]|显示电池和电源状态|acpi -V
+dmidecode|系统信息|dmidecode [选项]|读取硬件DMI/SMBIOS信息|dmidecode -t memory
+lshw|系统信息|lshw [选项]|列出硬件详细配置|lshw -short
+inxi|系统信息|inxi [选项]|全面的系统信息工具|inxi -F
+neofetch|系统信息|neofetch [选项]|显示系统信息（带Logo）|neofetch
+screenfetch|系统信息|screenfetch [选项]|显示系统信息（带ASCII）|screenfetch
+lsmod|系统信息|lsmod|列出已加载的内核模块|lsmod | grep usb
+modinfo|系统信息|modinfo [选项] <模块名>|显示内核模块信息|modinfo ext4
+modprobe|系统信息|modprobe [选项] <模块名>|加载或卸载内核模块|modprobe vfat
+depmod|系统信息|depmod [选项]|生成模块依赖关系|depmod -a
+insmod|系统信息|insmod [选项] <模块文件>|直接插入内核模块|insmod /path/to/module.ko
+rmmod|系统信息|rmmod [选项] <模块名>|移除内核模块|rmmod usb_storage
+sysctl|系统信息|sysctl [选项] <参数>|查看或修改内核参数|sysctl net.ipv4.ip_forward
+udevadm|系统信息|udevadm [选项] <命令>|udev设备管理器管理|udevadm info -a -p /sys/class/net/wlan0
+lsdev|系统信息|lsdev|列出所有系统设备|lsdev
+procinfo|系统信息|procinfo [选项]|从/proc收集系统信息|procinfo
+pkg|包管理|pkg <子命令> [包名]|Termux包管理器|pkg install python
+apt|包管理|apt [子命令] [选项] [包名]|Debian系包管理器|apt update && apt upgrade
+apt-get|包管理|apt-get [子命令] [选项] [包名]|Debian底层包管理|apt-get install vim
+apt-cache|包管理|apt-cache [子命令] [选项]|查询APT包缓存|apt-cache search python
+dpkg|包管理|dpkg [选项] <包名>|Debian底层包管理器|dpkg -i package.deb
+dpkg-deb|包管理|dpkg-deb [选项] <文件>|操作.deb包文件|dpkg-deb -c package.deb
+pip|包管理|pip <子命令> [选项] [包名]|Python包管理器|pip install requests
+pip3|包管理|pip3 <子命令> [选项] [包名]|Python3包管理器|pip3 install flask
+npm|包管理|npm <子命令> [选项] [包名]|Node.js包管理器|npm install express
+gem|包管理|gem <子命令> [选项] [包名]|Ruby包管理器|gem install rails
+cargo|包管理|cargo <子命令> [选项]|Rust包管理器|cargo build --release
+snap|包管理|snap [子命令] [选项] [包名]|Snap包管理器|snap install vlc
+flatpak|包管理|flatpak [子命令] [选项]|Flatpak应用包管理器|flatpak install flathub org.videolan.VLC
+yum|包管理|yum [子命令] [选项] [包名]|RHEL/CentOS包管理器|yum install httpd
+dnf|包管理|dnf [子命令] [选项] [包名]|Fedora新版包管理器|dnf install neovim
+pacman|包管理|pacman [选项] <包名>|Arch Linux包管理器|pacman -S vim
+zypper|包管理|zypper [子命令] [选项] [包名]|openSUSE包管理器|zypper install vim
+rpm|包管理|rpm [选项] <包文件>|RPM包管理器|rpm -ivh package.rpm
+rpm2cpio|包管理|rpm2cpio <包文件>|将RPM包转为cpio归档|rpm2cpio package.rpm | cpio -idmv
+make|包管理|make [选项] [目标]|编译安装源码包|make && make install
+checkinstall|包管理|checkinstall [选项]|从源码生成安装包|checkinstall --type=deb
+tar|压缩归档|tar [选项] <归档> [文件...]|创建或解压tar包|tar -czf archive.tar.gz dir/
+gzip|压缩归档|gzip [选项] <文件>|压缩为.gz格式|gzip -k file.txt
+gunzip|压缩归档|gunzip [选项] <文件>|解压.gz文件|gunzip file.txt.gz
+bzip2|压缩归档|bzip2 [选项] <文件>|压缩为.bz2格式|bzip2 -k file.txt
+bunzip2|压缩归档|bunzip2 [选项] <文件>|解压.bz2文件|bunzip2 file.txt.bz2
+xz|压缩归档|xz [选项] <文件>|压缩为.xz格式|xz -k file.txt
+unxz|压缩归档|unxz [选项] <文件>|解压.xz文件|unxz file.txt.xz
+zcat|压缩归档|zcat [选项] <文件.gz>|查看压缩文件内容|zcat log.gz | grep error
+zip|压缩归档|zip [选项] <压缩包> <文件...>|压缩为.zip格式|zip -r archive.zip dir/
+unzip|压缩归档|unzip [选项] <文件.zip>|解压.zip文件|unzip archive.zip -d target_dir
+7z|压缩归档|7z <子命令> [选项] <归档>|7-Zip压缩或解压|7z x archive.7z
+rar|压缩归档|rar <子命令> [选项] <归档>|RAR压缩或解压|rar a archive.rar dir/
+unrar|压缩归档|unrar <子命令> [选项] <文件.rar>|解压RAR文件|unrar x archive.rar
+arj|压缩归档|arj <子命令> [选项] <归档>|ARJ压缩工具|arj a archive.arj dir/
+lz4|压缩归档|lz4 [选项] <文件>|超快压缩工具|lz4 file.txt
+zstd|压缩归档|zstd [选项] <文件>|Zstandard压缩（高压缩比）|zstd -o file.zst file.txt
+unzstd|压缩归档|unzstd [选项] <文件.zst>|解压.zst文件|unzstd file.zst
+compress|压缩归档|compress [选项] <文件>|传统的Unix压缩（.Z）|compress file.txt
+uncompress|压缩归档|uncompress [选项] <文件.Z>|解压.Z文件|uncompress file.Z
+lzma|压缩归档|lzma [选项] <文件>|LZMA压缩（高压缩率）|lzma -k file.txt
+unlzma|压缩归档|unlzma [选项] <文件.lzma>|解压.lzma文件|unlzma file.txt.lzma
+cpio|压缩归档|cpio [选项]|复制文件进出cpio归档|find . | cpio -o > archive.cpio
+ar|压缩归档|ar [选项] <归档> <文件>|创建/管理静态库(.a)|ar rcs libfoo.a foo.o
+fdisk|磁盘存储|fdisk [选项] <设备>|磁盘分区管理工具|fdisk -l
+parted|磁盘存储|parted [选项] <设备> [命令]|分区工具（支持GPT）|parted /dev/block/mmcblk0 print
+mkfs|磁盘存储|mkfs [选项] <设备>|创建文件系统|mkfs.ext4 /dev/sdb1
+mkfs.ext4|磁盘存储|mkfs.ext4 [选项] <设备>|创建ext4文件系统|mkfs.ext4 -L mydisk /dev/sdb1
+mkfs.xfs|磁盘存储|mkfs.xfs [选项] <设备>|创建XFS文件系统|mkfs.xfs -f /dev/sdb1
+mkfs.btrfs|磁盘存储|mkfs.btrfs [选项] <设备>|创建Btrfs文件系统|mkfs.btrfs /dev/sdb1
+mkfs.fat|磁盘存储|mkfs.fat [选项] <设备>|创建FAT文件系统|mkfs.fat -F 32 /dev/sdb1
+mkswap|磁盘存储|mkswap [选项] <设备>|创建交换分区|mkswap /dev/sdb1
+fsck|磁盘存储|fsck [选项] <设备>|检查并修复文件系统|fsck /dev/sda1
+e2fsck|磁盘存储|e2fsck [选项] <设备>|检查ext2/3/4文件系统|e2fsck -f /dev/sda1
+dd|磁盘存储|dd [选项]|低级复制工具（可备份整个磁盘）|dd if=/dev/sda of=backup.img bs=4M
+smartctl|磁盘存储|smartctl [选项] <设备>|查看硬盘S.M.A.R.T.健康状态|smartctl -a /dev/sda
+losetup|磁盘存储|losetup [选项] <设备> <文件>|设置循环设备|losetup /dev/loop0 image.img
+hdparm|磁盘存储|hdparm [选项] <设备>|查看或设置硬盘参数|hdparm -I /dev/sda
+sdparm|磁盘存储|sdparm [选项] <设备>|查看或设置SCSI设备参数|sdparm --all /dev/sda
+badblocks|磁盘存储|badblocks [选项] <设备>|检查磁盘坏道|badblocks -sv /dev/sda
+resize2fs|磁盘存储|resize2fs [选项] <设备>|调整ext2/3/4文件系统大小|resize2fs /dev/sda1 10G
+xfs_growfs|磁盘存储|xfs_growfs [选项] <挂载点>|扩展XFS文件系统|xfs_growfs /mnt/data
+btrfs|磁盘存储|btrfs <子命令> [选项]|Btrfs文件系统管理工具|btrfs subvolume create @mysubvol
+tune2fs|磁盘存储|tune2fs [选项] <设备>|调整ext2/3/4文件系统参数|tune2fs -L myvolume /dev/sda1
+dumpe2fs|磁盘存储|dumpe2fs [选项] <设备>|转储ext文件系统信息|dumpe2fs -h /dev/sda1
+debugfs|磁盘存储|debugfs [选项] <设备>|ext文件系统调试器|debugfs -w /dev/sda1
+wipefs|磁盘存储|wipefs [选项] <设备>|擦除设备上的文件系统签名|wipefs -a /dev/sdb1
+useradd|用户权限|useradd [选项] <用户名>|创建新用户|useradd -m newuser
+usermod|用户权限|usermod [选项] <用户名>|修改用户属性|usermod -aG sudo newuser
+userdel|用户权限|userdel [选项] <用户名>|删除用户|userdel -r olduser
+groupadd|用户权限|groupadd [选项] <组名>|创建新用户组|groupadd developers
+groupdel|用户权限|groupdel <组名>|删除用户组|groupdel oldgroup
+groupmod|用户权限|groupmod [选项] <组名>|修改用户组属性|groupmod -n newname oldname
+passwd|用户权限|passwd [选项] [用户名]|修改密码|passwd
+su|用户权限|su [选项] [用户]|切换用户身份|su - root
+sudo|用户权限|sudo [选项] <命令>|以超级用户执行命令|sudo apt update
+chage|用户权限|chage [选项] <用户名>|修改密码过期信息|chage -M 90 username
+newgrp|用户权限|newgrp [组名]|切换到新组（登录新组）|newgrp developers
+sg|用户权限|sg <组名> <命令>|以指定组身份执行命令|sg developers "make build"
+chsh|用户权限|chsh [选项] [用户名]|更改登录Shell|chsh -s /bin/bash
+chfn|用户权限|chfn [选项] [用户名]|更改用户信息（GECOS）|chfn -f "John" user
+id|用户权限|id [选项] [用户]|显示用户身份信息|id
+groups|用户权限|groups [用户名]|显示用户所属组|groups root
+whoami|用户权限|whoami|显示当前用户名|whoami
+lastlog|用户权限|lastlog [选项]|显示所有用户最近登录|lastlog -u 1000
+faillock|用户权限|faillock [选项]|查看或重置登录失败锁定|faillock --user username --reset
+pwck|用户权限|pwck [选项]|检查/etc/passwd文件完整性|pwck
+grpck|用户权限|grpck [选项]|检查/etc/group文件完整性|grpck
+vipw|用户权限|vipw [选项]|安全编辑/etc/passwd文件|vipw
+vigr|用户权限|vigr [选项]|安全编辑/etc/group文件|vigr
+termux-open|Android专属|termux-open <文件或URL>|用应用打开文件或链接|termux-open https://google.com
+termux-clipboard-get|Android专属|termux-clipboard-get|读取Android剪贴板|termux-clipboard-get
+termux-clipboard-set|Android专属|termux-clipboard-set <文本>|设置Android剪贴板|termux-clipboard-set "hello"
+termux-battery-status|Android专属|termux-battery-status|获取电池状态（JSON）|termux-battery-status
+termux-wifi-scaninfo|Android专属|termux-wifi-scaninfo|扫描附近WiFi信息|termux-wifi-scaninfo
+termux-sensor|Android专属|termux-sensor [选项] [传感器]|读取传感器数据|termux-sensor -s "Accelerometer" -n 5
+termux-toast|Android专属|termux-toast [选项] <文本>|显示系统提示（Toast）|termux-toast "Hello!"
+termux-notification|Android专属|termux-notification [选项]|发送系统通知|termux-notification --title "提醒" --content "完成啦"
+termux-camera-photo|Android专属|termux-camera-photo [选项] <文件>|拍照并保存|termux-camera-photo photo.jpg
+termux-media-scan|Android专属|termux-media-scan [文件或目录]|通知系统扫描媒体文件|termux-media-scan ~/downloads
+termux-wake-lock|Android专属|termux-wake-lock <子命令>|防止设备进入休眠|termux-wake-lock lock
+termux-torch|Android专属|termux-torch <on或off>|控制相机闪光灯|termux-torch on
+termux-infrared-frequencies|Android专属|termux-infrared-frequencies|获取红外频率（需硬件支持）|termux-infrared-frequencies
+termux-infrared-transmit|Android专属|termux-infrared-transmit <频率>|发射红外信号|termux-infrared-transmit 38000
+termux-share|Android专属|termux-share [选项] <文件>|分享文件到其他应用|termux-share photo.jpg
+termux-open-url|Android专属|termux-open-url <URL>|打开URL链接|termux-open-url https://bing.com
+termux-download|Android专属|termux-download [选项] <URL>|下载文件到设备|termux-download https://example.com/file
+termux-telephony-deviceinfo|Android专属|termux-telephony-deviceinfo|获取设备信息（IMEI等）|termux-telephony-deviceinfo
+termux-telephony-cellinfo|Android专属|termux-telephony-cellinfo|获取基站信息|termux-telephony-cellinfo
+termux-location|Android专属|termux-location [选项]|获取定位信息|termux-location -p network
+termux-vibrate|Android专属|termux-vibrate [选项]|震动设备|termux-vibrate -d 500
+termux-tts-speak|Android专属|termux-tts-speak <文本>|文字转语音|termux-tts-speak "Hello World"
+termux-keystore|Android专属|termux-keystore [子命令]|访问Android密钥库|termux-keystore list
+am|Android专属|am <子命令> [选项]|活动管理器（启动应用）|am start -a android.intent.action.VIEW -d https://google.com
+input|Android专属|input <子命令> [参数]|模拟输入事件|input tap 500 1000
+pm|Android专属|pm <子命令> [选项]|包管理器|pm list packages | grep wechat
+settings|Android专属|settings <子命令> [参数]|修改系统设置|settings put global airplane_mode_on 1
+dumpsys|Android专属|dumpsys [选项] [服务]|转储系统服务状态|dumpsys battery
+logcat|Android专属|logcat [选项] [过滤器]|查看系统日志|logcat -c && logcat
+screencap|Android专属|screencap [选项] <文件>|截取屏幕截图|screencap /sdcard/screen.png
+screenrecord|Android专属|screenrecord [选项] <文件>|录制屏幕视频|screenrecord --time-limit 10 /sdcard/demo.mp4
+cmd|Android专属|cmd <服务> <命令>|Android服务管理器|cmd activity monitor
+wm|Android专属|wm [子命令] [参数]|窗口管理器（修改屏幕尺寸）|wm size 1080x1920
+svc|Android专属|svc <服务> [命令]|控制系统服务（WiFi/数据）|svc wifi enable
+monkey|Android专属|monkey [选项]|Android压力测试工具|monkey -p com.example.app 500
+content|Android专属|content <子命令> [参数]|访问Android内容提供者|content query --uri content://settings/secure
+alias|Shell内置|alias [别名=命令]|创建或查看命令别名|alias ll='ls -la'
+unalias|Shell内置|unalias <别名>|删除命令别名|unalias ll
+type|Shell内置|type [选项] <命令名>|显示命令的类型|type cd
+which|Shell内置|which [选项] <命令名>|定位可执行文件路径|which python
+command|Shell内置|command [选项] <命令> [参数]|以内置方式执行命令|command -v ls
+exec|Shell内置|exec <命令> [参数]|替换当前Shell进程|exec zsh
+eval|Shell内置|eval <参数>|将字符串作为命令执行|eval "echo $HOME"
+source|Shell内置|source <文件名>|在当前Shell执行脚本|source ~/.bashrc
+export|Shell内置|export [变量名[=值]]|设置或导出环境变量|export PATH=$PATH:/my/bin
+readonly|Shell内置|readonly [变量名=值]|将变量设为只读|readonly PI=3.14159
+return|Shell内置|return [N]|从函数返回并指定退出码|return 1
+exit|Shell内置|exit [N]|退出Shell或脚本|exit 0
+break|Shell内置|break [N]|跳出循环|break 2
+continue|Shell内置|continue [N]|跳过本次循环剩余部分|continue
+test|Shell内置|test <条件>|条件测试表达式|test -f file.txt && echo "存在"
+trap|Shell内置|trap <命令> <信号>|捕获信号并执行命令|trap "rm -f /tmp/tmpfile" EXIT
+read|Shell内置|read [选项] [变量名]|从标准输入读取一行|read -p "输入名字: " name
+ulimit|Shell内置|ulimit [选项] [限制值]|设置用户资源限制|ulimit -n 4096
+set|Shell内置|set [选项]|设置或显示Shell选项和位置参数|set -o errexit
+unset|Shell内置|unset <变量名>|删除变量或函数|unset MYVAR
+shift|Shell内置|shift [N]|移动位置参数|shift 2
+getopts|Shell内置|getopts <选项串> <变量>|解析脚本命令行选项|getopts "ab:c" opt
+declare|Shell内置|declare [选项] <变量>|声明变量类型和属性|declare -i count=0
+local|Shell内置|local <变量=值>|定义局部变量（函数内）|local name="world"
+typeset|Shell内置|typeset [选项] <变量>|声明变量（同declare）|typeset -r CONST=42
+pushd|Shell内置|pushd [目录]|将目录推入栈并切换|pushd /sdcard
+popd|Shell内置|popd [选项]|从目录栈弹出并切换|popd
+dirs|Shell内置|dirs [选项]|显示目录栈内容|dirs -v
+shopt|Shell内置|shopt [选项] [选项名]|设置Shell可选行为|shopt -s histappend
+bind|Shell内置|bind [选项]|显示或修改Readline键绑定|bind -P
+history|Shell内置|history [选项]|显示或操作命令历史|history | grep git
+fc|Shell内置|fc [选项] [范围]|查看或编辑历史命令|fc -l 100 110
+enable|Shell内置|enable [选项] <内建名>|启用或禁用Shell内建命令|enable -n cd
+sleep|日期时间|sleep <秒数>|延迟指定时间（支持小数）|sleep 0.5
+hwclock|日期时间|hwclock [选项]|查看或同步硬件时钟|hwclock --show
+at|日期时间|at [选项] <时间>|在指定时间执行一次任务|at now + 1 minute
+atq|日期时间|atq [选项]|查看等待中的at任务|atq
+atrm|日期时间|atrm <任务号>|删除at任务|atrm 5
+batch|日期时间|batch [选项]|在系统负载允许时执行任务|batch <<< "backup.sh"
+crontab|日期时间|crontab [选项]|管理定时任务（cron）|crontab -e
+timedatectl|日期时间|timedatectl [选项] [命令]|查看或设置时间和时区|timedatectl list-timezones
+time|日期时间|time <命令> [参数]|测量命令执行时间|time sleep 1
+ntpdate|日期时间|ntpdate [选项] <服务器>|同步NTP时间|ntpdate pool.ntp.org
+chronyc|日期时间|chronyc [选项] <命令>|Chrony NTP客户端管理|chronyc tracking
+clear|终端控制|clear|清空终端屏幕|clear
+reset|终端控制|reset|重置终端显示（乱码时救命）|reset
+stty|终端控制|stty [选项]|查看或修改终端行设置|stty -a
+tty|终端控制|tty|显示当前终端的设备文件名|tty
+seq|终端控制|seq [选项] <首数> [增量] <末数>|生成数字序列|seq -w 1 100
+yes|终端控制|yes [字符串]|持续输出字符串（自动确认）|yes "" | apt install
+script|终端控制|script [选项] [文件]|记录终端会话到文件|script session.log
+scriptreplay|终端控制|scriptreplay [选项] <文件>|回放终端会话记录|scriptreplay session.log
+mesg|终端控制|mesg [y|n]|控制其他用户能否写终端|mesg n
+wall|终端控制|wall <消息>|向所有终端用户广播消息|wall "System will restart in 5 minutes"
+write|终端控制|write <用户> [终端]|向其他用户终端发送消息|write user pts/0
+banner|终端控制|banner <文本>|输出大字横幅|banner "Hello!"
+echo|终端控制|echo [字符串]|输出文本|echo "Hello World"
+printf|终端控制|printf <格式> [参数]|格式化输出|printf "%03d\n" 5
+dialog|终端控制|dialog [选项]|终端对话框工具|dialog --msgbox "Hello" 5 20
+whiptail|终端控制|whiptail [选项]|简易终端对话框|whiptail --yesno "Continue?" 10 40
+tput|终端控制|tput <属性>|设置终端属性|tput setaf 2
+resize|终端控制|resize|检测并设置终端大小|resize
+git|开发工具|git <子命令> [选项]|分布式版本控制系统|git clone https://github.com/user/repo
+git init|开发工具|git init [目录]|初始化Git仓库|git init myproject
+git add|开发工具|git add [选项] <文件>|将文件添加到暂存区|git add .
+git commit|开发工具|git commit [选项]|提交暂存区修改|git commit -m "feat: add login"
+git push|开发工具|git push [选项] [远程] [分支]|推送提交到远程仓库|git push origin main
+git pull|开发工具|git pull [选项] [远程] [分支]|从远程拉取并合并|git pull origin main
+git fetch|开发工具|git fetch [选项] [远程]|从远程获取但不合并|git fetch origin
+git branch|开发工具|git branch [选项] [分支名]|管理分支|git branch feature-x
+git checkout|开发工具|git checkout [选项] <分支>|切换分支或恢复文件|git checkout -b new-feature
+git switch|开发工具|git switch [选项] <分支>|切换分支（新版）|git switch main
+git merge|开发工具|git merge [选项] <分支>|合并分支|git merge feature-x
+git rebase|开发工具|git rebase [选项] <分支>|变基操作|git rebase main
+git log|开发工具|git log [选项]|查看提交历史|git log --oneline --graph
+git status|开发工具|git status|查看仓库状态|git status
+git diff|开发工具|git diff [选项]|查看差异|git diff --staged
+git stash|开发工具|git stash [选项]|暂存工作区修改|git stash push -m "wip"
+git tag|开发工具|git tag [选项] <标签>|管理标签|git tag v1.0.0
+git reset|开发工具|git reset [选项] <提交>|撤销提交或重置|git reset --soft HEAD~1
+git revert|开发工具|git revert [选项] <提交>|撤销某次提交|git revert HEAD
+git remote|开发工具|git remote [选项]|管理远程仓库|git remote add origin https://github.com/user/repo.git
+git config| [选项]|配置Git设置|git config --global user.name "Your Name"
+git clone|开发工具|git clone <URL> [目录]|克隆远程仓库|git clone https://github.com/user/repo
+git rm|开发工具|git rm [选项] <文件>|从Git中删除文件|git rm --cached file.txt
+git mv|开发工具|git mv <源> <目标>|移动或重命名Git文件|git mv old.txt new.txt
+git blame|开发工具|git blame [选项] <文件>|查看文件每行的最后修改者|git blame file.txt
+git show|开发工具|git show [选项] <提交>|显示提交详情|git show HEAD
+git describe|开发工具|git describe [选项]|显示最近的标签描述|git describe --tags
+git cherry-pick|开发工具|git cherry-pick [选项] <提交>|将指定提交应用到当前分支|git cherry-pick abc123
+git bisect|开发工具|git bisect <子命令>|二分查找引入bug的提交|git bisect start
+git grep|开发工具|git grep [选项] <模式>|在Git仓库中搜索|git grep "TODO" -- *.py
+git archive|开发工具|git archive [选项] <分支>|创建仓库归档|git archive --format=tar.gz HEAD > repo.tar.gz
+python|开发工具|python [选项] [文件]|Python解释器|python -c "print('hello')"
+python3|开发工具|python3 [选项] [文件]|Python3解释器|python3 -m venv venv
+node|开发工具|node [选项] [文件]|Node.js运行时|node app.js
+gcc|开发工具|gcc [选项] <源文件>|GNU C编译器|gcc -o hello hello.c
+g++|开发工具|g++ [选项] <源文件>|GNU C++编译器|g++ -o hello hello.cpp
+gdb|开发工具|gdb [选项] <程序>|GNU调试器|gdb ./a.out core
+strace|开发工具|strace [选项] <命令>|跟踪系统调用和信号|strace -f -e open ls
+ltrace|开发工具|ltrace [选项] <命令>|跟踪库函数调用|ltrace ls
+valgrind|开发工具|valgrind [选项] <程序>|内存调试和检测工具|valgrind --leak-check=yes ./program
+objdump|开发工具|objdump [选项] <文件>|显示目标文件信息|objdump -d a.out
+readelf|开发工具|readelf [选项] <文件>|显示ELF文件信息|readelf -h a.out
+nm|开发工具|nm [选项] <文件>|列出目标文件中的符号|nm -C a.out | grep main
+ldd|开发工具|ldd [选项] <文件>|查看程序依赖的共享库|ldd /bin/ls
+strip|开发工具|strip [选项] <文件>|去除符号表（减小体积）|strip myprogram
+size|开发工具|size [选项] <文件>|显示目标文件各段大小|size a.out
+strings|开发工具|strings [选项] <文件>|提取二进制中的可读字符串|strings /bin/ls | head
+make|开发工具|make [选项] [目标]|自动化构建（Makefile）|make && make install
+cmake|开发工具|cmake [选项] <源目录>|构建系统生成器|cmake -B build
+autoconf|开发工具|autoconf [选项]|生成configure脚本|autoconf
+automake|开发工具|automake [选项]|生成Makefile.in|automake --add-missing
+configure|开发工具|./configure [选项]|源码编译配置脚本|./configure --prefix=/usr
+patch|开发工具|patch [选项] <原文件> <补丁>|应用diff补丁|patch -p1 < fix.patch
+diff|开发工具|diff [选项] <文件1> <文件2>|比较文件差异|diff -Naur old/ new/
+sdiff|开发工具|sdiff [选项] <文件1> <文件2>|并排对比文件差异|sdiff file1 file2
+perl|开发工具|perl [选项] <文件>|Perl解释器|perl -e 'print "Hello\n"'
+lua|开发工具|lua [选项] [文件]|Lua解释器|lua -e 'print("hello")'
+ruby|开发工具|ruby [选项] [文件]|Ruby解释器|ruby -e 'puts "Hello"'
+go|开发工具|go <子命令> [选项]|Go语言编译工具|go build main.go
+rustc|开发工具|rustc [选项] <源文件>|Rust编译器|rustc main.rs
+javac|开发工具|javac [选项] <源文件>|Java编译器|javac Hello.java
+java|开发工具|java [选项] <类名>|Java运行环境|java Hello
+javadoc|开发工具|javadoc [选项] <源文件>|生成Java文档|javadoc -d docs Hello.java
+jar|开发工具|jar [选项] <文件>|Java归档工具|jar cf app.jar .
+kotlin|开发工具|kotlin [选项] <文件>|Kotlin运行环境|kotlin hello.kt
+swift|开发工具|swift [选项] [文件]|Swift编译器/解释器|swift hello.swift
+cargo|开发工具|cargo <子命令> [选项]|Rust包管理器|rustc main.rs
+ctags|开发工具|ctags [选项] <文件...>|生成代码标签文件|ctags -R .
+cscope|开发工具|cscope [选项]|C源文件浏览器|cscope -R
+indent|开发工具|indent [选项] <文件>|格式化C代码|indent -kr file.c
+bc|其他工具|bc [选项] [文件]|高精度计算器|echo "scale=2; 10/3" | bc
+expr|其他工具|expr <表达式>|整数运算和字符串操作|expr 5 + 3
+shuf|其他工具|shuf [选项] [文件]|随机排列或生成随机数|shuf -i 1-10 -n 3
+screen|其他工具|screen [选项]|终端多路复用器（会话管理）|screen -S mysession
+tmux|其他工具|tmux [命令] [选项]|终端复用器（增强版screen）|tmux new -s mysession
+column|其他工具|column [选项] [文件]|将文本按列对齐显示|column -t -s: /etc/passwd
+figlet|其他工具|figlet [选项] <文本>|用ASCII艺术字显示文本|figlet "Linux"
+toilet|其他工具|toilet [选项] <文本>|彩色ASCII艺术字|toilet -f mono12 "Hello"
+cowsay|其他工具|cowsay [选项] <文本>|ASCII奶牛说话|cowsay "Hello World"
+fortune|其他工具|fortune [选项]|显示随机名言|fortune
+sl|其他工具|sl [选项]|蒸汽机车（趣味指令）|sl
+yes|其他工具|yes [字符串]|持续输出字符串|yes "" | apt install
+rev|其他工具|rev [选项] [文件]|反转每行字符|echo "hello" | rev
+factor|其他工具|factor [选项] <数字>|分解质因数|factor 1024
+nohup|其他工具|nohup <命令> [参数]|退出终端后继续运行|nohup python server.py &
+stdbuf|其他工具|stdbuf [选项] <命令>|调整标准I/O缓冲|stdbuf -oL python script.py
+logrotated|系统维护|logrotate [选项] <配置文件>|日志轮转工具|logrotate -f /etc/logrotate.conf
+journalctl|系统维护|journalctl [选项]|查看systemd日志|journalctl -u ssh.service -n 50
+systemctl|系统维护|systemctl <子命令> [服务]|systemd服务管理|systemctl start nginx
+systemd-analyze|系统维护|systemd-analyze [选项]|分析系统启动性能|systemd-analyze blame
+timedatectl|系统维护|timedatectl [选项] [命令]|系统时间和时区管理|timedatectl set-timezone Asia/Shanghai
+localectl|系统维护|localectl [选项] [命令]|系统区域和语言设置|localectl set-locale LANG=zh_CN.UTF-8
+loginctl|系统维护|loginctl [选项] [命令]|登录会话管理|loginctl list-sessions
+busctl|系统维护|busctl [选项] [命令]|D-Bus总线工具|busctl list
+udevadm|系统维护|udevadm [选项] <命令>|udev设备管理|udevadm monitor
+sensors|系统维护|sensors [选项]|显示传感器温度|sensors
+lm_sensors|系统维护|sensors-detect|检测主板传感器芯片|sensors-detect
+powertop|系统维护|powertop [选项]|电源消耗分析工具|powertop --calibrate
+iotop|系统维护|iotop [选项]|实时显示I/O使用|iotop -o
+atop|系统维护|atop [选项]|高级系统负载监控|atop
+htop|系统维护|htop [选项]|交互式进程查看器|htop
+glances|系统维护|glances [选项]|全能系统监控工具|glances
+dstat|系统维护|dstat [选项]|多功能系统资源统计|dstat -cpu -mem -net
+sar|系统维护|sar [选项]|系统活动报告工具|sar -u 1 5
+vmstat|系统维护|vmstat [选项] [间隔]|系统虚拟内存统计|vmstat 1 5
+iostat|系统维护|iostat [选项] [间隔]|CPU和I/O统计|iostat -x 1
+mpstat|系统维护|mpstat [选项] [间隔]|多处理器统计|mpstat -P ALL 1
+numactl|系统维护|numactl [选项] <命令>|NUMA架构控制|numactl --cpunodebind=0 ./program
+irqtop|系统维护|irqtop [选项]|查看中断请求（IRQ）信息|irqtop
+lscgroup|系统维护|lscgroup [选项]|列出控制组|cgroups
+tc|网络调试|tc [选项] <对象>|流量控制工具|tc qdisc show
+brctl|网络调试|brctl [选项] <命令>|以太网桥接管理|brctl addbr bridge0
+vconfig|网络调试|vconfig <命令>|VLAN接口配置|vconfig add eth0 100
+iw dev|网络调试|iw dev <接口> <操作>|无线设备操作|iw dev wlan0 scan
+rfkill|网络调试|rfkill [选项]|RF设备开关控制|rfkill block wifi
+docker|容器管理|docker <子命令> [选项]|容器管理平台|docker run -it ubuntu bash
+docker ps|容器管理|docker ps [选项]|列出运行中的容器|docker ps -a
+docker images|容器管理|docker images [选项]|列出本地Docker镜像|docker images
+docker build|容器管理|docker build [选项] <路径>|构建镜像|docker build -t myapp .
+docker exec|容器管理|docker exec [选项] <容器> <命令>|在容器中执行命令|docker exec -it container1 bash
+docker logs|容器管理|docker logs [选项] <容器>|查看容器日志|docker logs -f container1
+docker pull|容器管理|docker pull <镜像名>|拉取镜像|docker pull alpine:latest
+docker push|容器管理|docker push <镜像名>|推送镜像到仓库|docker push user/myapp:latest
+docker compose|容器管理|docker compose [子命令] [选项]|Docker Compose编排|docker compose up -d
+docker swarm|容器管理|docker swarm [子命令]|Docker Swarm集群管理|docker swarm init
+docker network|容器管理|docker network [子命令]|管理Docker网络|docker network create mynet
+docker volume|容器管理|docker volume [子命令]|管理Docker卷|docker volume create myvol
+docker rmi|容器管理|docker rmi [选项] <镜像>|删除镜像|docker rmi unused-image
+docker rm|容器管理|docker rm [选项] <容器>|删除容器|docker rm container1
+docker stop|容器管理|docker stop [选项] <容器>|停止运行中的容器|docker stop container1
+docker start|容器管理|docker start [选项] <容器>|启动已停止的容器|docker start container1
+docker restart|容器管理|docker restart [选项] <容器>|重启容器|docker restart container1
+docker stats|容器管理|docker stats [选项]|显示容器资源使用统计|docker stats
+docker inspect|容器管理|docker inspect [选项] <对象>|查看容器或镜像详细信息|docker inspect container1
+docker search|容器管理|docker search [选项] <关键词>|搜索Docker镜像|docker search ubuntu
+docker login|容器管理|docker login [选项] [仓库]|登录Docker仓库|docker login docker.io
+docker logout|容器管理|docker logout [选项] [仓库]|退出Docker仓库|docker logout
+docker save|容器管理|docker save [选项] <镜像>|导出镜像为tar文件|docker save -o image.tar myapp
+docker load|容器管理|docker load [选项]|从tar文件导入镜像|docker load -i image.tar
+docker tag|容器管理|docker tag <源镜像> <目标标签>|给镜像打标签|docker tag myapp user/myapp:v1
+kubectl|容器管理|kubectl [子命令] [选项]|Kubernetes集群管理|kubectl get pods
+podman|容器管理|podman [子命令] [选项]|无守护进程容器引擎|podman run -it alpine sh
+containerd|容器管理|ctr <子命令> [选项]|containerd容器管理工具|ctr images pull docker.io/library/alpine:latest
+docker-machine|容器管理|docker-machine [子命令] [选项]|Docker虚拟机管理|docker-machine create default
+singularity|容器管理|singularity [子命令] [选项]|高性能计算容器系统|singularity pull library://ubuntu
+lxc|容器管理|lxc <子命令> [选项]|Linux容器管理|lxc launch ubuntu:22.04 mycontainer
+lxd|容器管理|lxd <子命令> [选项]|LXD容器管理守护进程|lxd init
+incus|容器管理|incus <子命令> [选项]|新一代系统容器管理器|incus launch images:ubuntu/22.04
+vagrant|容器管理|vagrant [子命令] [选项]|虚拟化环境管理|vagrant up
+terraform|容器管理|terraform [子命令] [选项]|基础设施即代码工具|terraform init
+ansible|自动化运维|ansible [选项] <模式>|自动化运维工具|ansible all -m ping
+ansible-playbook|自动化运维|ansible-playbook [选项] <剧本>|执行Ansible剧本|ansible-playbook site.yml
+puppet|自动化运维|puppet apply [选项] <清单>|Puppet配置管理|puppet apply site.pp
+chef-solo|自动化运维|chef-solo [选项]|Chef客户端模式|chef-solo -c solo.rb
+salt|自动化运维|salt <目标> <函数> [参数]|SaltStack远程执行|salt '*' test.ping
+salt-call|自动化运维|salt-call [选项] <函数>|本地执行Salt函数|salt-call grains.items
+nix-env|包管理|nix-env [选项] <操作>|Nix包管理器环境管理|nix-env -iA nixpkgs.hello
+nix-shell|包管理|nix-shell [选项]|Nix临时环境|nix-shell -p python3
+guix|包管理|guix <子命令> [选项]|GNU Guix包管理器|guix install hello
+brew|包管理|brew <子命令> [选项]|Homebrew包管理器（macOS/Linux）|brew install wget
+sdk|包管理|sdk <子命令> [选项]|SDKMAN软件开发包管理|sdk install java
+deno|开发工具|deno [选项] [文件]|JavaScript/TypeScript运行时|deno run server.ts
+bun|开发工具|bun [选项] [文件]|高性能JavaScript运行时|bun run app.ts
+zig|开发工具|zig <子命令> [选项]|Zig编译器/构建工具|zig build-exe hello.zig
+nim|开发工具|nim <子命令> [选项]|Nim编译器|nim c hello.nim
+dmd|开发工具|dmd [选项] <源文件>|D语言编译器|dmd hello.d
+ghc|开发工具|ghc [选项] <源文件>|Haskell编译器|ghc -o hello hello.hs
+crystal|开发工具|crystal [选项] [文件]|Crystal编译器|crystal build app.cr
+elixir|开发工具|elixir [选项] [文件]|Elixir运行环境|elixir hello.exs
+mix|开发工具|mix [子命令] [选项]|Elixir构建工具|mix new myapp
+rebar3|开发工具|rebar3 [子命令]|Erlang构建工具|rebar3 new release myapp
+erl|开发工具|erl [选项]|Erlang运行环境|erl -noshell -eval "io:format('hello~n')" -s erlang halt
+clang|开发工具|clang [选项] <源文件>|LLVM C编译器|clang -o hello hello.c
+perl|开发工具|perl [选项] <文件>|Perl脚本解释器|perl -e 'print "Hello\n"'
+racket|开发工具|racket [选项] [文件]|Racket语言运行环境|racket hello.rkt
+node|开发工具|node [选项] [文件]|Node.js运行时|node app.js
+npm|开发工具|npm <子命令> [选项]|Node.js包管理器|npm init
+yarn|开发工具|yarn <子命令> [选项]|Yarn包管理器（更快npm替代）|yarn add express
+pnpm|开发工具|pnpm <子命令> [选项]|PNPM包管理器（磁盘高效）|pnpm install
+bower|开发工具|bower <子命令> [选项]|Web前端包管理器|bower install jquery
+grunt|开发工具|grunt [选项]|JavaScript任务运行器|grunt build
+gulp|开发工具|gulp [选项]|流式构建系统|gulp build
+webpack|开发工具|webpack [选项]|JavaScript模块打包器|webpack --mode production
+vite|开发工具|vite [选项]|前端开发构建工具|vite build
+esbuild|开发工具|esbuild [选项]|快速JavaScript/TypeScript打包器|esbuild app.js --bundle --outfile=out.js
+tsc|开发工具|tsc [选项] [文件]|TypeScript编译器|tsc app.ts
+jq|JSON处理|jq [选项] <过滤器> [文件]|命令行JSON处理器|jq '.name' package.json
+yq|YAML处理|yq [选项] <表达式> [文件]|命令行YAML处理器|yq '.key' config.yaml
+hcl|配置管理|hcltool [选项] <文件>|HCL配置解析工具|hcltool config.hcl
+redis-cli|数据库|redis-cli [选项] <命令>|Redis命令行客户端|redis-cli ping
+mysql|数据库|mysql [选项] <数据库>|MySQL命令行客户端|mysql -u root -p mydb
+psql|数据库|psql [选项] <数据库>|PostgreSQL命令行客户端|psql -d mydb
+sqlite3|数据库|sqlite3 [选项] <文件>|SQLite数据库管理工具|sqlite3 my.db "SELECT * FROM users;"
+mongosh|数据库|mongosh [选项]|MongoDB Shell客户端|mongosh mydb
+cockroach|数据库|cockroach <子命令> [选项]|CockroachDB分布式数据库|cockroach sql --insecure
+influx|数据库|influx [选项]|InfluxDB命令行客户端|influx -database mydb
+clickhouse-client|数据库|clickhouse-client [选项]|ClickHouse命令行客户端|clickhouse-client --query "SELECT 1"
+pg_dump|数据库|pg_dump [选项] <数据库>|PostgreSQL数据库备份|pg_dump mydb > backup.sql
+pg_restore|数据库|pg_restore [选项] <文件>|PostgreSQL数据库恢复|pg_restore -d mydb backup.dump
+mysqldump|数据库|mysqldump [选项] <数据库>|MySQL数据库备份|mysqldump -u root mydb > backup.sql
